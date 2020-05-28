@@ -13,9 +13,13 @@ class TaskController extends Controller
 }
     public function insert(Request $request){
         $body = $request->input('user_text');
+        echo 'your text:'.$body.'<br>';
         $successful = $request->input('do_it');
+        echo 'do it:'.$successful.'<br>';
         $user_id=$request->input('user_id');
-        $data=array('body'=>$body,"successful"=>$successful,
+        echo 'your id:'.$user_id.'<br>';
+        echo 'added time:'.date("Y-m-d H:i");
+       $data=array('body'=>$body,"successful"=>$successful,
             "user_id"=>$user_id,'time'=>date("Y-m-d H:i"),
             'created_at'=>date("Y-m-d H:i"),
             'updated_at'=>date("Y-m-d H:i")
